@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FoodSave - Formulario de pedido</title>
+</head>
+<body>
+  <header>
+    <img src="image.png" alt="Logo FasstSave Kevin" width="180">
+    <h1>FasstSave Kevin</h1>
+    <h2>Formulario de pedido</h2>
+    <nav>
+      <a href="index.html">Inicio</a> |
+      <a href="menu.html">Menu</a> |
+      <a href="pedidos.html">Pedidos</a> |
+      <a href="ofertas.html">Ofertas</a>
+    </nav>
+    <hr>
+  </header>
+
+  <main>
+    <h2>Completa tus datos</h2>
+    <form action="pedidos.html" method="get">
+      <p>
+        <label for="cliente">Nombre del cliente:</label><br>
+        <input type="text" id="cliente" name="cliente" required>
+      </p>
+      <p>
+        <label for="direccion">Direccion:</label><br>
+        <input type="text" id="direccion" name="direccion" required>
+      </p>
+      <p>
+        <label for="telefono">Telefono:</label><br>
+        <input type="tel" id="telefono" name="telefono" required>
+      </p>
+      <p>
+        <label for="plato">Seleccion de platos:</label><br>
+        <select id="plato" name="plato" required>
+          <option value="">Seleccione una opcion</option>
+          <option value="combo-ensaladas">Combo de ensaladas</option>
+          <option value="sandwiches">Pack de sandwiches</option>
+          <option value="postres">Postres variados</option>
+          <option value="plato-casero">Plato casero</option>
+        </select>
+      </p>
+      <p>
+        <label for="cantidad">Cantidad:</label><br>
+        <input type="number" id="cantidad" name="cantidad" min="1" max="20" required>
+      </p>
+      <p>
+        <button type="submit">Enviar pedido</button>
+      </p>
+    </form>
+
+    <p><a href="menu.html">Regresar al menu</a> | <a href="index.html">Volver al inicio</a></p>
+  </main>
+
+  <footer>
+    <hr>
+    <p>Gracias por apoyar el rescate de alimentos.</p>
+  </footer>
+</body>
+</html>
