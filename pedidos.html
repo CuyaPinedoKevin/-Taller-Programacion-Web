@@ -3,27 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FoodSave - Pedidos realizados</title>
+  <title>FasstSave Kevin - Pedidos realizados</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <img src="image.png" alt="Logo FasstSave Kevin" width="180">
+    <img src="image.png" alt="Logo FasstSave Kevin">
     <h1>FasstSave Kevin</h1>
     <h2>Tabla de pedidos realizados</h2>
     <nav>
-      <a href="index.html">Inicio</a> |
-      <a href="menu.html">Menu</a> |
-      <a href="form_pedido.html">Nuevo pedido</a> |
+      <a href="index.html">Inicio</a>
+      <a href="menu.html">Menú</a>
+      <a href="form_pedido.html">Nuevo pedido</a>
       <a href="ofertas.html">Ofertas</a>
     </nav>
-    <hr>
   </header>
 
   <main>
+    <div class="tarjeta">
     <h2>Pedidos simulados</h2>
-    <table border="1" cellpadding="8">
+    <div class="tabla-contenedor">
+    <table>
       <tr>
-        <th>Numero de pedido</th>
+        <th>Número de pedido</th>
         <th>Cliente</th>
         <th>Productos seleccionados</th>
         <th>Cantidad</th>
@@ -48,20 +50,21 @@
       </tr>
       <tr>
         <td>003</td>
-        <td>Lucia Perez</td>
+        <td>Lucía Pérez</td>
         <td>Postres variados</td>
         <td>3</td>
         <td>S/ 18.00</td>
         <td>Preparando</td>
       </tr>
     </table>
+    </div>
 
-    <p><a href="menu.html">Regresar al menu</a> | <a href="index.html">Volver al inicio</a></p>
+    <p class="acciones"><a class="boton" href="menu.html">Regresar al menú</a> <a class="boton" href="index.html">Volver al inicio</a></p>
+    </div>
   </main>
 
   <footer>
-    <hr>
-    <p>Actualizacion de pedidos en tiempo referencial.</p>
+    <p>Actualización de pedidos en tiempo referencial.</p>
   </footer>
 </body>
 </html>

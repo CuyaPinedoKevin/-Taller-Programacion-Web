@@ -3,25 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FoodSave - Ofertas especiales</title>
+  <title>FasstSave Kevin - Ofertas especiales</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header>
-    <img src="image.png" alt="Logo FasstSave Kevin" width="180">
+    <img src="image.png" alt="Logo FasstSave Kevin">
     <h1>FasstSave Kevin</h1>
     <h2>Ofertas especiales</h2>
     <nav>
-      <a href="index.html">Inicio</a> |
-      <a href="menu.html">Menu</a> |
-      <a href="form_pedido.html">Hacer pedido</a> |
+      <a href="index.html">Inicio</a>
+      <a href="menu.html">Menú</a>
+      <a href="form_pedido.html">Hacer pedido</a>
       <a href="pedidos.html">Pedidos</a>
     </nav>
-    <hr>
   </header>
 
-  <main>
+  <main class="grid-dos">
+    <div class="tarjeta">
     <h2>Productos con mayor descuento</h2>
-    <table border="1" cellpadding="8">
+    <div class="tabla-contenedor">
+    <table>
       <tr>
         <th>Producto</th>
         <th>Precio original</th>
@@ -32,7 +34,7 @@
         <td>Pack de sandwiches</td>
         <td>S/ 15.00</td>
         <td>S/ 8.50</td>
-        <td>Ultimas unidades</td>
+        <td>Últimas unidades</td>
       </tr>
       <tr>
         <td>Postres variados</td>
@@ -47,13 +49,18 @@
         <td>Alta demanda</td>
       </tr>
     </table>
+    </div>
+    </div>
 
-    <p><strong>Aprovecha:</strong> estas ofertas corresponden a productos cercanos a su hora limite de venta.</p>
+    <div class="tarjeta nota">
+      <h2>Aprovecha</h2>
+      <p>Estas ofertas corresponden a productos cercanos a su hora límite de venta.</p>
+      <p><a class="boton" href="form_pedido.html">Hacer pedido</a></p>
+    </div>
   </main>
 
   <footer>
-    <hr>
-    <p><a href="menu.html">Ir al menu</a> | <a href="index.html">Volver al inicio</a></p>
+    <p><a href="menu.html">Ir al menú</a> | <a href="index.html">Volver al inicio</a></p>
   </footer>
 </body>
 </html>
