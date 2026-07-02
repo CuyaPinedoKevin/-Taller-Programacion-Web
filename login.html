@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -9,9 +9,12 @@
 <body>
   <header>
     <img src="image.png" alt="Logo FasstSave Kevin">
-    <h1>FasstSave Kevin</h1>
-    <p>Plataforma para reducir el desperdicio de alimentos.</p>
-    <nav>
+    <div class="encabezado-texto">
+      <h1>FasstSave Kevin</h1>
+      <p>Acceso para continuar con la simulacion.</p>
+    </div>
+    <button class="menu-toggle" type="button" onclick="toggleMenu()">☰</button>
+    <nav id="menu-principal">
       <a href="index.html">Inicio</a>
       <a href="registrar.html">Registrarse</a>
       <a href="menu.html">Menú</a>
@@ -19,29 +22,37 @@
     </nav>
   </header>
 
-  <main>
-    <div class="tarjeta">
-    <h2>Iniciar sesión</h2>
-    <form action="index.html" method="get">
-      <div>
-        <label for="usuario">Usuario:</label><br>
-        <input type="text" id="usuario" name="usuario" required>
-      </div>
-      <div>
-        <label for="contrasena">Contraseña:</label><br>
-        <input type="password" id="contrasena" name="contrasena" required>
-      </div>
-      <div>
+  <main class="pagina-login pagina-form grid-dos">
+    <section class="tarjeta">
+      <h2>Iniciar sesión</h2>
+      <form id="form-login" action="index.html" method="get">
+        <div>
+          <label for="correo">Correo electrónico:</label>
+          <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo" required>
+        </div>
+        <div>
+          <label for="contrasena">Contraseña:</label>
+          <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required>
+        </div>
         <button type="submit">Ingresar</button>
-      </div>
-    </form>
+        <p id="mensaje-login" class="mensaje"></p>
+      </form>
+      <p>Si aún no tienes cuenta, <a href="registrar.html">regístrate aquí</a>.</p>
+    </section>
 
-    <p>Si aún no tienes cuenta, <a href="registrar.html">regístrate aquí</a>.</p>
-    </div>
+    <aside class="tarjeta nota">
+      <h3>Para que sirve</h3>
+      <p>El inicio de sesion permite mostrar un saludo personalizado en la pagina principal y continuar navegando por el sitio.</p>
+    </aside>
   </main>
 
   <footer>
     <p>FasstSave Kevin 2026</p>
   </footer>
+  <script src="app.js"></script>
 </body>
 </html>
+
+
+
+

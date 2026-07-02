@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -9,11 +9,14 @@
 <body>
   <header>
     <img src="image.png" alt="Logo FasstSave Kevin">
-    <h1>FasstSave Kevin</h1>
-    <p>Rescate de alimentos a precios accesibles.</p>
+    <div class="encabezado-texto">
+      <h1>FasstSave Kevin</h1>
+      <p>Comida del día a menor precio para que nada bueno termine en la basura.</p>
+    </div>
     <nav>
       <a href="login.html">Iniciar sesión</a>
       <a href="registrar.html">Registrarse</a>
+      <a href="index.html">Inicio</a>
       <a href="menu.html">Menú</a>
       <a href="form_pedido.html">Pedido</a>
       <a href="pedidos.html">Pedidos</a>
@@ -21,28 +24,55 @@
     </nav>
   </header>
 
-  <main class="grid-dos">
-    <div class="tarjeta">
-      <h2>Bienvenido a FasstSave Kevin</h2>
-      <p>Nos alegra verte aquí. Esta plataforma conecta a restaurantes y negocios con personas que buscan alimentos a precios accesibles antes de su fecha de vencimiento.</p>
+  <main class="pagina-inicio grid-dos">
+    <section class="tarjeta tarjeta-principal">
+      <span class="etiqueta">Aprovecha la comida del dia</span>
+      <h2>Compra comida que aún está buena y ayuda a reducir desperdicios</h2>
+      <p>La idea de FasstSave Kevin es sencilla: mostrar comidas que un negocio ya preparo y venderlas con descuento antes de que se pierdan. Sirve como una simulacion de pedidos para restaurantes, panaderias o cafeterias.</p>
+      <div class="acciones">
+        <a class="boton" href="menu.html">Ver comidas</a>
+        <a class="boton secundario" href="ofertas.html">Ver ofertas</a>
+      </div>
+    </section>
 
-      <h3>Nuestro propósito</h3>
-      <p>FasstSave Kevin busca rescatar alimentos en buen estado que están próximos a vencer, reduciendo el desperdicio y ofreciendo una alternativa económica y responsable para la comunidad.</p>
-    </div>
+    <section class="tarjeta nota">
+      <h3>Como funciona</h3>
+      <div class="pasos">
+        <article>
+          <strong>1</strong>
+          <p>El local registra lo que le queda disponible.</p>
+        </article>
+        <article>
+          <strong>2</strong>
+          <p>El cliente revisa el menu y escoge una opcion.</p>
+        </article>
+        <article>
+          <strong>3</strong>
+          <p>El pedido queda guardado en la tabla de control.</p>
+        </article>
+      </div>
+    </section>
 
-    <div class="tarjeta nota">
-      <h3>Navegación rápida</h3>
-      <ul class="lista-rapida">
-        <li><a href="menu.html">Ver menú disponible</a></li>
-        <li><a href="form_pedido.html">Realizar pedido</a></li>
-        <li><a href="ofertas.html">Consultar ofertas especiales</a></li>
-      </ul>
-    </div>
+    <section class="tarjeta panel-js ancho-completo">
+      <h2>Resumen del sitio</h2>
+      <p id="saludo-usuario">El usuario puede revisar comidas, completar un pedido simulado y consultar la tabla de pedidos realizados.</p>
+      <p id="contador-rescate">La propuesta se enfoca en aprovechar alimentos disponibles antes de que se desperdicien.</p>
+      <button id="actualizar-resumen" type="button">Actualizar resumen</button>
+    </section>
+
+    <section class="tarjeta ancho-completo">
+      <h2>Objetivo del proyecto</h2>
+      <p>Este sitio muestra una propuesta para reducir el desperdicio de alimentos. Incluye inicio de sesion, registro, menu, ofertas, formulario de pedido y una tabla donde se ven los pedidos realizados.</p>
+    </section>
   </main>
 
   <footer>
     <p>Contacto: U24266577@utp.edu.pe</p>
     <p>Redes sociales: Facebook | Instagram | TikTok</p>
   </footer>
+  <script src="app.js"></script>
 </body>
 </html>
+
+
+

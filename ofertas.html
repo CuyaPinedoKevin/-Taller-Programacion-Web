@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -9,9 +9,12 @@
 <body>
   <header>
     <img src="image.png" alt="Logo FasstSave Kevin">
-    <h1>FasstSave Kevin</h1>
-    <h2>Ofertas especiales</h2>
-    <nav>
+    <div class="encabezado-texto">
+      <h1>FasstSave Kevin</h1>
+      <p>Promociones para productos que deben venderse pronto.</p>
+    </div>
+    <button class="menu-toggle" type="button" onclick="toggleMenu()">☰</button>
+    <nav id="menu-principal">
       <a href="index.html">Inicio</a>
       <a href="menu.html">Menú</a>
       <a href="form_pedido.html">Hacer pedido</a>
@@ -19,48 +22,53 @@
     </nav>
   </header>
 
-  <main class="grid-dos">
-    <div class="tarjeta">
-    <h2>Productos con mayor descuento</h2>
-    <div class="tabla-contenedor">
-    <table>
-      <tr>
-        <th>Producto</th>
-        <th>Precio original</th>
-        <th>Precio oferta</th>
-        <th>Urgencia</th>
-      </tr>
-      <tr>
-        <td>Pack de sandwiches</td>
-        <td>S/ 15.00</td>
-        <td>S/ 8.50</td>
-        <td>Últimas unidades</td>
-      </tr>
-      <tr>
-        <td>Postres variados</td>
-        <td>S/ 12.00</td>
-        <td>S/ 6.00</td>
-        <td>Se agotan hoy</td>
-      </tr>
-      <tr>
-        <td>Plato casero</td>
-        <td>S/ 20.00</td>
-        <td>S/ 11.00</td>
-        <td>Alta demanda</td>
-      </tr>
-    </table>
-    </div>
-    </div>
+  <main class="pagina-ofertas grid-dos">
+    <section class="tarjeta">
+      <h2>Ofertas del dia</h2>
+      <label for="filtro-ofertas">Filtrar ofertas:</label>
+      <select id="filtro-ofertas" onchange="filtrarOfertas()">
+        <option value="todas">Todas</option>
+        <option value="sandwiches">Sandwiches</option>
+        <option value="postres">Postres</option>
+        <option value="casero">Platos caseros</option>
+      </select>
+      <p id="aviso-ofertas" class="mensaje">Ofertas visibles: 3</p>
+      <div class="ofertas-grid">
+        <article class="oferta destacada" data-categoria="sandwiches">
+          <img class="imagen-oferta" src="sandwiches.png" alt="Pack de sandwiches en oferta">
+          <h3>Pack de sandwiches</h3>
+          <p>Ultimas unidades del turno mañana.</p>
+          <div class="precio"><del>S/ 15.00</del><strong>S/ 8.50</strong></div>
+        </article>
+        <article class="oferta" data-categoria="postres">
+          <img class="imagen-oferta" src="postres.jpg" alt="Postres variados en oferta">
+          <h3>Postres variados</h3>
+          <p>Disponibles solo por hoy.</p>
+          <div class="precio"><del>S/ 12.00</del><strong>S/ 6.00</strong></div>
+        </article>
+        <article class="oferta" data-categoria="casero">
+          <img class="imagen-oferta" src="plato-casero.jpg" alt="Plato casero en oferta">
+          <h3>Plato casero</h3>
+          <p>Precio especial para salida rapida.</p>
+          <div class="precio"><del>S/ 20.00</del><strong>S/ 11.00</strong></div>
+        </article>
+      </div>
+    </section>
 
-    <div class="tarjeta nota">
-      <h2>Aprovecha</h2>
-      <p>Estas ofertas corresponden a productos cercanos a su hora límite de venta.</p>
+    <aside class="tarjeta nota">
+      <h2>Nota</h2>
+      <p>Las ofertas son parte de la simulacion. En un caso real, el local podria actualizar cantidades y horarios segun su stock.</p>
       <p><a class="boton" href="form_pedido.html">Hacer pedido</a></p>
-    </div>
+    </aside>
   </main>
 
   <footer>
     <p><a href="menu.html">Ir al menú</a> | <a href="index.html">Volver al inicio</a></p>
   </footer>
+  <script src="app.js"></script>
 </body>
 </html>
+
+
+
+

@@ -1,7 +1,16 @@
+﻿/* Estilos generales de mi pagina */
+* {
+  box-sizing: border-box;
+}
+
+@view-transition {
+  navigation: auto;
+}
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background: #f4f8f1;
+  background: #f6f5ef;
   color: #26352b;
   line-height: 1.5;
   min-height: 100vh;
@@ -11,21 +20,7 @@ body {
     "content"
     "footer";
   grid-template-rows: auto 1fr auto;
-}
-
-
-
-
-header {
-  grid-area: header;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  padding: 22px 16px;
-  background: #2f6f3e;
-  color: white;
-  text-align: center;
+  animation: desvanecer-pagina 0.45s ease both;
 }
 
 h1,
@@ -35,96 +30,352 @@ p {
   margin-top: 0;
 }
 
-header h1 {
-  margin-bottom: 0;
-  font-size: 2rem;
+main {
+  grid-area: content;
+  width: 92%;
+  max-width: 1100px;
+  margin: 28px auto;
+  display: grid;
+  gap: 20px;
+  animation: entrada-suave 0.5s ease both;
 }
 
-header p,
-header h2 {
-  margin-bottom: 0;
+/* Encabezado y menu de navegacion */
+header {
+  grid-area: header;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px 22px;
+  align-items: center;
+  padding: 22px 6%;
+  background: #215061;
+  color: white;
 }
 
 header img {
-  width: 140px;
+  width: 115px;
+  border: 3px solid #f7c948;
   border-radius: 8px;
+  background: white;
+}
+
+header h1 {
+  margin-bottom: 0;
+  font-size: 2.1rem;
+}
+
+header p {
+  margin-bottom: 0;
+}
+
+.encabezado-texto {
+  display: grid;
+  gap: 4px;
 }
 
 nav {
+  grid-column: 1 / -1;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 10px;
 }
 
+.menu-toggle {
+  display: none;
+  justify-self: end;
+  min-width: 44px;
+  font-size: 1.2rem;
+}
 
-
-
+/* Botones */
 nav a,
 .boton,
 button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
   padding: 9px 14px;
-  border-radius: 6px;
-  background: #f7c948;
-  color: #26352b;
-  text-decoration: none;
-  font-weight: bold;
   border: none;
+  border-radius: 6px;
+  background: #f4c542;
+  color: #162a46;
+  font-weight: bold;
+  text-decoration: none;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.3s ease;
+  animation: flotar-boton 2.8s ease-in-out infinite;
+  transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
 }
 
 nav a:hover,
 .boton:hover,
 button:hover {
   background: #ffe08a;
-  transform: translateY(-2px);
+  opacity: 0.94;
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px rgba(244, 197, 66, 0.65), 0 6px 14px rgba(12, 21, 51, 0.16);
 }
 
-main {
-  grid-area: content;
-  width: 92%;
-  max-width: 1050px;
-  margin: 28px auto;
-  display: grid;
-  gap: 20px;
-  animation: aparecer 0.8s ease;
+.boton.secundario {
+  background: #e6f0df;
+  color: #16465a;
 }
 
+/* todo lo que se vuelve a utilizar para todas las paginas */
 .grid-dos {
   grid-template-columns: 1.2fr 0.8fr;
   align-items: start;
 }
 
+.pagina-form {
+  grid-template-columns: minmax(280px, 1fr) minmax(240px, 0.7fr);
+}
+
+.ancho-completo {
+  grid-column: 1 / -1;
+}
+
 .tarjeta {
+  padding: 22px;
+  border: 1px solid #d9dfd2;
+  border-radius: 8px;
   background: white;
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta:hover,
+.producto:hover,
+.oferta:hover {
+  opacity: 0.97;
+  transform: translateY(-5px);
+  border-color: #c4d0bc;
+  box-shadow: 0 6px 16px rgba(38, 53, 43, 0.08);
+}
+
+.nota {
+  border-left: 5px solid #e7b93f;
+  background: #fff8df;
+}
+
+.mensaje {
+  margin: 8px 0 0;
+  padding: 10px;
+  border-radius: 6px;
+  background: #eef7ea;
+  color: #26352b;
+  font-weight: bold;
+}
+
+.mensaje.error {
+  background: #ffe1df;
+  color: #9c1c12;
+}
+
+.mensaje.exito {
+  background: #d8f3dc;
+  color: #1b6b34;
+}
+
+.campo-error {
+  border-color: #d64232;
+  background: #fff5f4;
+}
+
+.acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.etiqueta,
+.descuento,
+.estado {
+  display: inline-flex;
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.etiqueta,
+.descuento {
+  background: #d96436;
+  color: white;
+}
+
+.precio {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+.precio strong {
+  color: #e9551c;
+  font-size: 1.25rem;
+}
+
+/* Inicio */
+.pagina-inicio .tarjeta-principal {
+  display: grid;
+  gap: 12px;
+  min-height: 270px;
+  align-content: center;
+  animation: levantar 0.55s ease both;
+}
+
+.pagina-inicio .panel-js {
+  border-left: 5px solid #4b8da5;
+}
+
+.pasos {
+  display: grid;
+  gap: 16px;
+}
+
+.pasos article {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
   border: 1px solid #d8e5d4;
   border-radius: 8px;
-  padding: 20px;
-  transition: transform 0.3s ease;
+  background: white;
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.tarjeta:hover {
-  transform: translateY(-3px);
+.pasos strong {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #16465a;
+  color: white;
 }
 
-.lista-rapida {
+/* Logear */
+.pagina-login .tarjeta {
+  animation: levantar 0.55s ease both;
+}
+
+/* Registrar  */
+.pagina-registro .tarjeta {
+  animation: levantar 0.55s ease both;
+}
+
+/*  Menu de Comidas */
+.pagina-menu {
+  grid-template-columns: 1fr;
+}
+
+.pagina-menu .producto {
+  animation: entrada-suave 0.55s ease both;
+}
+
+.pagina-menu .producto:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.pagina-menu .producto:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+.pagina-menu .producto:nth-child(4) {
+  animation-delay: 0.24s;
+}
+
+.menu-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.producto {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid #d8e5d4;
+  border-radius: 8px;
+  background: white;
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.imagen-producto {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid #d8e5d4;
+  border-radius: 8px;
+}
+
+.imagen-producto:hover {
+  opacity: 0.92;
+  box-shadow: 0 4px 12px rgba(33, 80, 97, 0.14);
+}
+
+/* Formulario de Pedido */
+.pagina-pedido .tarjeta {
+  animation: levantar 0.55s ease both;
+}
+
+form {
+  display: grid;
+  gap: 14px;
+}
+
+form div {
+  display: grid;
+  gap: 6px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b8cbb2;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  background: #f4f8f1;
+  border-color: #f7c948;
+  box-shadow: 0 0 0 3px rgba(247, 201, 72, 0.25);
+}
+
+.resumen-pedido ul {
   display: grid;
   gap: 10px;
   padding-left: 18px;
 }
 
+/* Tabla de Pedidos */
+.pagina-tabla {
+  grid-template-columns: 1fr;
+}
 
-
-
+.pagina-tabla table {
+  animation: entrada-suave 0.55s ease both;
+}
 
 .tabla-contenedor {
   width: 100%;
+  overflow-x: auto;
 }
 
 table {
   width: 100%;
+  min-width: 720px;
   border-collapse: collapse;
   background: white;
 }
@@ -137,64 +388,83 @@ td {
 }
 
 th {
-  background: #2f6f3e;
+  background: #16465a;
   color: white;
 }
 
 tr {
-  transition: background 0.3s ease;
+  transition: background 0.2s ease;
 }
 
 tr:hover {
   background: #eef7ea;
 }
 
-form {
+.estado.enviado {
+  background: #d8f3dc;
+  color: #1b6b34;
+}
+
+.estado.proceso {
+  background: #fff1bd;
+  color: #8a6200;
+}
+
+.estado.preparando {
+  background: #dceeff;
+  color: #16465a;
+}
+
+/* Pagina Ofertas Especiales */
+.pagina-ofertas .tarjeta {
+  animation: levantar 0.55s ease both;
+}
+
+.ofertas-grid {
   display: grid;
-  gap: 14px;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-label {
-  font-weight: bold;
-}
-
-input,
-select {
-  width: 96%;
-  padding: 10px;
-  border: 1px solid #b8cbb2;
-  border-radius: 6px;
-  font-size: 1rem;
-}
-
-input:focus,
-select:focus {
-  background: #f4f8f1;
-}
-
-.acciones {
-  display: flex;
-  flex-wrap: wrap;
+.oferta {
+  display: grid;
   gap: 10px;
-  align-items: center;
+  padding: 16px;
+  border: 1px solid #d8e5d4;
+  border-radius: 8px;
+  background: white;
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.nota {
-  background: #fff7d7;
-  border-left: 5px solid #f7c948;
+.oferta.destacada {
+  grid-column: 1 / -1;
+  background: #fff8df;
 }
 
+.imagen-oferta {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid #d8e5d4;
+  border-radius: 8px;
+}
 
+.imagen-oferta:hover {
+  opacity: 0.92;
+  box-shadow: 0 4px 12px rgba(33, 80, 97, 0.14);
+}
 
+.oferta.destacada .imagen-oferta {
+  height: 190px;
+}
 
-
-
+/* parte baja de las paginas generales */
 footer {
   grid-area: footer;
   display: grid;
   gap: 6px;
   padding: 18px;
-  background: #26352b;
+  background: #0c1533;
   color: white;
   text-align: center;
 }
@@ -207,10 +477,11 @@ footer a {
   color: #f7c948;
 }
 
-@keyframes aparecer {
+/* Animaciones generales que agregue */
+@keyframes entrada-suave {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(10px);
   }
 
   to {
@@ -219,21 +490,87 @@ footer a {
   }
 }
 
+@keyframes desvanecer-pagina {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes levantar {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flotar-boton {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-3px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Diseno responsive */
+@media (max-width: 900px) {
+  .menu-grid,
+  .ofertas-grid,
+  .grid-dos,
+  .pagina-form {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @media (max-width: 700px) {
+  header {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
   header h1 {
     font-size: 1.6rem;
   }
 
-  .grid-dos {
+  .grid-dos,
+  .pagina-form,
+  .menu-grid,
+  .ofertas-grid {
     grid-template-columns: 1fr;
   }
 
   nav {
+    display: none;
     flex-direction: column;
     width: 100%;
   }
 
-  nav a {
+  nav.abierto {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+  }
+
+  nav a,
+  .boton,
+  button {
     width: 100%;
   }
 

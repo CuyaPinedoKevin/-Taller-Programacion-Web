@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -9,9 +9,12 @@
 <body>
   <header>
     <img src="image.png" alt="Logo FasstSave Kevin">
-    <h1>FasstSave Kevin</h1>
-    <h2>Tabla de pedidos realizados</h2>
-    <nav>
+    <div class="encabezado-texto">
+      <h1>FasstSave Kevin</h1>
+      <p>Control de pedidos registrados.</p>
+    </div>
+    <button class="menu-toggle" type="button" onclick="toggleMenu()">☰</button>
+    <nav id="menu-principal">
       <a href="index.html">Inicio</a>
       <a href="menu.html">Menú</a>
       <a href="form_pedido.html">Nuevo pedido</a>
@@ -19,52 +22,36 @@
     </nav>
   </header>
 
-  <main>
-    <div class="tarjeta">
-    <h2>Pedidos simulados</h2>
-    <div class="tabla-contenedor">
-    <table>
-      <tr>
-        <th>Número de pedido</th>
-        <th>Cliente</th>
-        <th>Productos seleccionados</th>
-        <th>Cantidad</th>
-        <th>Total</th>
-        <th>Estado</th>
-      </tr>
-      <tr>
-        <td>001</td>
-        <td>Ana Torres</td>
-        <td>Combo de ensaladas</td>
-        <td>2</td>
-        <td>S/ 20.00</td>
-        <td>Enviado</td>
-      </tr>
-      <tr>
-        <td>002</td>
-        <td>Carlos Rojas</td>
-        <td>Pack de sandwiches</td>
-        <td>1</td>
-        <td>S/ 8.50</td>
-        <td>En proceso</td>
-      </tr>
-      <tr>
-        <td>003</td>
-        <td>Lucía Pérez</td>
-        <td>Postres variados</td>
-        <td>3</td>
-        <td>S/ 18.00</td>
-        <td>Preparando</td>
-      </tr>
-    </table>
-    </div>
-
-    <p class="acciones"><a class="boton" href="menu.html">Regresar al menú</a> <a class="boton" href="index.html">Volver al inicio</a></p>
-    </div>
+  <main class="pagina-tabla">
+    <section class="tarjeta ancho-completo">
+      <h2>Pedidos realizados</h2>
+      <p>Aqui aparecen los pedidos creados desde el formulario.</p>
+      <p id="resumen-pedidos" class="mensaje">Total de pedidos mostrados: 0</p>
+      <div class="tabla-contenedor">
+        <table>
+          <thead>
+            <tr>
+              <th>Número de pedido</th>
+              <th>Cliente</th>
+              <th>Productos seleccionados</th>
+              <th>Cantidad</th>
+              <th>Total</th>
+              <th>Estado</th>
+            </tr>
+          </thead>
+          <tbody id="tabla-pedidos"></tbody>
+        </table>
+      </div>
+      <p class="acciones"><button id="limpiar-pedidos" type="button" class="boton secundario">Actualizar pedidos</button> <a class="boton secundario" href="menu.html">Regresar al menu</a> <a class="boton secundario" href="index.html">Volver al inicio</a></p>
+    </section>
   </main>
 
   <footer>
-    <p>Actualización de pedidos en tiempo referencial.</p>
+    <p>Pedidos guardados en el navegador para la demostracion.</p>
   </footer>
+  <script src="app.js"></script>
 </body>
 </html>
+
+
+

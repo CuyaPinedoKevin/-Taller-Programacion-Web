@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
@@ -9,9 +9,12 @@
 <body>
   <header>
     <img src="image.png" alt="Logo FasstSave Kevin">
-    <h1>FasstSave Kevin</h1>
-    <p>Registro de nuevos usuarios solidarios con el rescate de alimentos.</p>
-    <nav>
+    <div class="encabezado-texto">
+      <h1>FasstSave Kevin</h1>
+      <p>Registro basico para clientes o negocios.</p>
+    </div>
+    <button class="menu-toggle" type="button" onclick="toggleMenu()">☰</button>
+    <nav id="menu-principal">
       <a href="login.html">Iniciar sesión</a>
       <a href="index.html">Inicio</a>
       <a href="menu.html">Menú</a>
@@ -19,37 +22,54 @@
     </nav>
   </header>
 
-  <main>
-    <div class="tarjeta">
-    <h2>Registrar usuario</h2>
-    <form action="login.html" method="get">
-      <div>
-        <label for="nombre">Nombre completo:</label><br>
-        <input type="text" id="nombre" name="nombre" required>
-      </div>
-      <div>
-        <label for="correo">Correo electrónico:</label><br>
-        <input type="email" id="correo" name="correo" required>
-      </div>
-      <div>
-        <label for="clave">Contraseña:</label><br>
-        <input type="password" id="clave" name="clave" required>
-      </div>
-      <div>
-        <label for="confirmar">Confirmar contraseña:</label><br>
-        <input type="password" id="confirmar" name="confirmar" required>
-      </div>
-      <div>
+  <main class="pagina-registro pagina-form grid-dos">
+    <section class="tarjeta">
+      <h2>Registrar usuario</h2>
+      <form id="form-registro" action="login.html" method="get">
+        <div>
+          <label for="nombre">Nombre completo:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div>
+          <label for="correo">Correo electrónico:</label>
+          <input type="email" id="correo" name="correo" required>
+        </div>
+        <div>
+          <label for="tipo">Tipo de usuario:</label>
+          <select id="tipo" name="tipo" required>
+            <option value="">Seleccione una opción</option>
+            <option value="cliente">Cliente</option>
+            <option value="restaurante">Restaurante o negocio</option>
+          </select>
+        </div>
+        <div>
+          <label for="clave">Contraseña:</label>
+          <input type="password" id="clave" name="clave" required>
+        </div>
+        <div>
+          <label for="confirmar">Confirmar contraseña:</label>
+          <input type="password" id="confirmar" name="confirmar" required>
+        </div>
         <button type="submit">Registrar</button>
-      </div>
-    </form>
+        <p id="mensaje-registro" class="mensaje"></p>
+      </form>
+      <p id="contador-usuarios" class="mensaje">Usuarios registrados: 0</p>
+      <p><a href="login.html">Volver a iniciar sesión</a></p>
+    </section>
 
-    <p><a href="login.html">Volver a iniciar sesión</a></p>
-    </div>
+    <aside class="tarjeta nota">
+      <h3>Idea del registro</h3>
+      <p>El formulario guarda datos de prueba en el navegador. Sirve para representar como se separarian clientes y negocios dentro del sistema.</p>
+    </aside>
   </main>
 
   <footer>
     <p>FasstSave Kevin 2026</p>
   </footer>
+  <script src="app.js"></script>
 </body>
 </html>
+
+
+
+
