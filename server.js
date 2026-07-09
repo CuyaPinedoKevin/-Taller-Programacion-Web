@@ -54,7 +54,7 @@ app.post("/registrar", (req, res) => {
   );
 });
 
-// LISTAR USUARIOS
+
 app.get("/usuarios", (req, res) => {
   db.all("SELECT id_usuario, nombre, correo, tipo FROM usuarios", [], (err, usuarios) => {
     if (err) {
@@ -144,5 +144,5 @@ app.listen(3000, () => {
 });
 
 
-/*PARA CONECTARME AL SERVIDOR MEDIANTE POWERSHEL*/
+
 /*& "C:\Users\gemin\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe" server.js¨*/

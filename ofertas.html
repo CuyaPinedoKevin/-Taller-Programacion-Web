@@ -4,11 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FasstSave Kevin - Ofertas especiales</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/general.css">
+  <link rel="stylesheet" href="css/ofertas.css">
+  <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
   <header>
-    <img src="image.png" alt="Logo FasstSave Kevin">
+    <img src="img/image.png" alt="Logo FasstSave Kevin">
     <div class="encabezado-texto">
       <h1>FasstSave Kevin</h1>
       <p>Promociones para productos que deben venderse pronto.</p>
@@ -26,7 +28,7 @@
     <section class="tarjeta">
       <h2>Ofertas del dia</h2>
       <label for="filtro-ofertas">Filtrar ofertas:</label>
-      <select id="filtro-ofertas" onchange="filtrarOfertas()">
+      <select id="filtro-ofertas">
         <option value="todas">Todas</option>
         <option value="sandwiches">Sandwiches</option>
         <option value="postres">Postres</option>
@@ -35,19 +37,19 @@
       <p id="aviso-ofertas" class="mensaje">Ofertas visibles: 3</p>
       <div class="ofertas-grid">
         <article class="oferta destacada" data-categoria="sandwiches">
-          <img class="imagen-oferta" src="sandwiches.png" alt="Pack de sandwiches en oferta">
+          <img class="imagen-oferta" src="img/sandwiches.png" alt="Pack de sandwiches en oferta">
           <h3>Pack de sandwiches</h3>
           <p>Ultimas unidades del turno mañana.</p>
           <div class="precio"><del>S/ 15.00</del><strong>S/ 8.50</strong></div>
         </article>
         <article class="oferta" data-categoria="postres">
-          <img class="imagen-oferta" src="postres.jpg" alt="Postres variados en oferta">
+          <img class="imagen-oferta" src="img/postres.jpg" alt="Postres variados en oferta">
           <h3>Postres variados</h3>
           <p>Disponibles solo por hoy.</p>
           <div class="precio"><del>S/ 12.00</del><strong>S/ 6.00</strong></div>
         </article>
         <article class="oferta" data-categoria="casero">
-          <img class="imagen-oferta" src="plato-casero.jpg" alt="Plato casero en oferta">
+          <img class="imagen-oferta" src="img/plato-casero.jpg" alt="Plato casero en oferta">
           <h3>Plato casero</h3>
           <p>Precio especial para salida rapida.</p>
           <div class="precio"><del>S/ 20.00</del><strong>S/ 11.00</strong></div>
@@ -65,7 +67,8 @@
   <footer>
     <p><a href="menu.html">Ir al menú</a> | <a href="index.html">Volver al inicio</a></p>
   </footer>
-  <script src="app.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/ofertas.js"></script>
 </body>
 </html>
 
