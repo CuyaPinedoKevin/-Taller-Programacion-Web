@@ -1,0 +1,9 @@
+.pagina-pedido .tarjeta {
+  animation: levantar 0.55s ease both;
+}
+
+.resumen-pedido ul {
+  display: grid;
+  gap: 10px;
+  padding-left: 18px;
+}

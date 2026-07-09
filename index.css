@@ -1,0 +1,36 @@
+.pagina-inicio .tarjeta-principal {
+  display: grid;
+  gap: 12px;
+  min-height: 270px;
+  align-content: center;
+  animation: levantar 0.55s ease both;
+}
+
+.pagina-inicio .panel-js {
+  border-left: 5px solid #4b8da5;
+}
+
+.pasos {
+  display: grid;
+  gap: 16px;
+}
+
+.pasos article {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid #d8e5d4;
+  border-radius: 8px;
+  background: white;
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pasos strong {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #16465a;
+  color: white;
+}

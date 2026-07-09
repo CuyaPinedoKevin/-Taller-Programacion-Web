@@ -1,0 +1,41 @@
+.pagina-ofertas .tarjeta {
+  animation: levantar 0.55s ease both;
+}
+
+.ofertas-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.oferta {
+  display: grid;
+  gap: 10px;
+  padding: 16px;
+  border: 1px solid #d8e5d4;
+  border-radius: 8px;
+  background: white;
+  transition: opacity 0.2s ease, transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.oferta.destacada {
+  grid-column: 1 / -1;
+  background: #fff8df;
+}
+
+.imagen-oferta {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border: 1px solid #d8e5d4;
+  border-radius: 8px;
+}
+
+.imagen-oferta:hover {
+  opacity: 0.92;
+  box-shadow: 0 4px 12px rgba(33, 80, 97, 0.14);
+}
+
+.oferta.destacada .imagen-oferta {
+  height: 190px;
+}

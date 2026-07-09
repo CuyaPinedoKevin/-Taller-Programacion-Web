@@ -1,0 +1,54 @@
+.pagina-tabla {
+  grid-template-columns: 1fr;
+}
+
+.pagina-tabla table {
+  animation: entrada-suave 0.55s ease both;
+}
+
+.tabla-contenedor {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  background: white;
+}
+
+th,
+td {
+  padding: 12px;
+  border: 1px solid #c9d9c2;
+  text-align: left;
+}
+
+th {
+  background: #16465a;
+  color: white;
+}
+
+tr {
+  transition: background 0.2s ease;
+}
+
+tr:hover {
+  background: #eef7ea;
+}
+
+.estado.enviado {
+  background: #d8f3dc;
+  color: #1b6b34;
+}
+
+.estado.proceso {
+  background: #fff1bd;
+  color: #8a6200;
+}
+
+.estado.preparando {
+  background: #dceeff;
+  color: #16465a;
+}
